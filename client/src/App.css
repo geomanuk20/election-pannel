@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;600&display=swap');
+
+:root {
+  --kerala-bg: #5d6d2b;
+  --ldf-bg: #d00d0d;
+  --udf-bg: #008cff;
+  --nda-bg: #e66a00;
+  --others-bg: #666666;
+  --text-white: #ffffff;
+  --text-black: #000000;
+  --bg-light: #f0f4f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* Scoreboard Styles */
+.scoreboard {
+  display: flex;
+  background: transparent;
+  overflow: hidden;
+  gap: 4px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+}
+
+.header {
+  padding: 15px 5px;
+  text-align: center;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.kerala-header { background-color: var(--kerala-bg); }
+.ldf-header { background-color: var(--ldf-bg); }
+.udf-header { background-color: var(--udf-bg); }
+.nda-header { background-color: var(--nda-bg); }
+.others-header { background-color: var(--others-bg); }
+
+.content {
+  background-color: white;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  line-height: 1;
+}
+
+.number {
+  color: var(--text-black);
+}
+
+/* Admin Styles */
+.admin-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.admin-title {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--kerala-bg);
+  font-size: 2.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.btn-primary { background: var(--kerala-bg); color: white; }
+.btn-secondary { background: #eee; color: #666; margin-top: 10px; }
+
+.animate-fade {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: scale(1.1);
+    filter: blur(5px);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* District Grid Styles */
+.district-grid-wrapper {
+    background-color: #fcebd5; /* Light peach background from image */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.district-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; /* Re-adding some gap between the two main columns */
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    background-color: #5d6d2b; /* Green header from image */
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.district-item {
+    display: flex;
+    align-items: stretch;
+    background: transparent; /* Show wrapper background */
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.district-name {
+    flex: 1;
+    padding: 8px 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; /* Extra bold like in image */
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: #000;
+    line-height: 1.2;
+}
+
+.party-lead-box {
+    width: 100px; /* Slightly wider */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem; /* Larger font */
+    font-weight: 700;
+    padding: 5px;
+}
+
+.bg-ldf { background-color: var(--ldf-bg); }
+.bg-udf { background-color: var(--udf-bg); }
+.bg-nda { background-color: var(--nda-bg); }
+.bg-oth { background-color: var(--others-bg); }
+.bg-none { 
+    background-color: #ffffff; 
+    color: #000000; 
+    border: 1px solid #ddd;
+}
+
+/* Premium Digital Reveal Animation */
+.reveal-container {
+    animation: containerFade 0.5s ease-out forwards;
+}
+
+.reveal-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: rowReveal 0.5s ease-out forwards;
+}
+
+@keyframes containerFade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+@keyframes rowReveal {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add staggered delays for up to 10 rows per column */
+.reveal-item:nth-child(1) { animation-delay: 0.05s; }
+.reveal-item:nth-child(2) { animation-delay: 0.10s; }
+.reveal-item:nth-child(3) { animation-delay: 0.15s; }
+.reveal-item:nth-child(4) { animation-delay: 0.20s; }
+.reveal-item:nth-child(5) { animation-delay: 0.25s; }
+.reveal-item:nth-child(6) { animation-delay: 0.30s; }
+.reveal-item:nth-child(7) { animation-delay: 0.35s; }
+.reveal-item:nth-child(8) { animation-delay: 0.40s; }
+.reveal-item:nth-child(9) { animation-delay: 0.45s; }
+.reveal-item:nth-child(10) { animation-delay: 0.50s; }
+
+@media (max-width: 768px) {
+    .district-grid {
+        grid-template-columns: 1fr;
+    }
+}
