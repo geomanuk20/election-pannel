@@ -7,6 +7,7 @@
     "build-client": "npm run build --prefix client",
     "install-all": "npm run install-client && npm run install-server",
     "render-build": "npm run install-all && npm run build-client",
+    "build": "npm run render-build",
     "start": "node server/server.js"
   },
   "dependencies": {
