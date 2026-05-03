@@ -309,12 +309,18 @@ app.delete('/api/districts/:id', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+// Serve Static Files for Frontend
+const clientDistPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientDistPath));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'), (err) => {
+        if (err) {
+            // Fallback for API or errors
+            res.status(404).send("Frontend not found. Please ensure 'npm run build' was successful.");
+        }
     });
-}
+});
 
 // Connect to DB first, then start server
 console.log('Connecting to MongoDB...');
