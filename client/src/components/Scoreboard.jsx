@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE = '/api';
+const API_BASE = window.location.hostname === 'localhost' 
+    ? 'http://localhost:5005/api' 
+    : '/api';
 
 const Scoreboard = () => {
     const [districts, setDistricts] = useState([]);
